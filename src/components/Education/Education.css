@@ -1,0 +1,131 @@
+/* ==================== EDUCATION SECTION ==================== */
+.education {
+  background: var(--color-bg);
+}
+
+.education-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==================== EDUCATION CARD ==================== */
+.education-card {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: flex-start;
+}
+
+.education-icon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-degree {
+  font-size: 1.75rem;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.education-field {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.education-institution {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ==================== EDUCATION META ==================== */
+.education-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.education-duration,
+.education-cgpa {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.education-duration svg,
+.education-cgpa svg {
+  color: var(--color-accent);
+  font-size: 1.125rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .education-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .education-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+  }
+
+  .education-degree {
+    font-size: 1.5rem;
+  }
+
+  .education-field {
+    font-size: 1.125rem;
+  }
+
+  .education-institution {
+    font-size: 1rem;
+  }
+
+  .education-meta {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .education-degree {
+    font-size: 1.25rem;
+  }
+
+  .education-field {
+    font-size: 1rem;
+  }
+
+  .education-meta {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+}
