@@ -95,9 +95,12 @@ const Hero = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
         >
           <div className="hero-image-wrapper">
-            <div className="hero-image-placeholder">
-              <span>JP</span>
-            </div>
+            <img
+              src="/jaivik-hero-img.png"
+              alt="Jaivik Patel"
+              className="hero-image-content"
+              loading="eager"
+            />
             <div className="hero-image-bg"></div>
           </div>
         </motion.div>

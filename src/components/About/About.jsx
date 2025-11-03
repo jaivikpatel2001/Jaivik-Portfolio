@@ -27,9 +27,12 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="about-image-wrapper">
-              <div className="about-image-placeholder">
-                <span>JP</span>
-              </div>
+              <img 
+                src="/jaivik-about-img.png" 
+                alt="Jaivik Patel" 
+                className="about-image-content"
+                loading="lazy"
+              />
             </div>
           </motion.div>
 

@@ -77,21 +77,20 @@
   aspect-ratio: 1;
 }
 
-.hero-image-placeholder {
+.hero-image-content {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 6rem;
-  font-weight: 700;
-  color: white;
+  object-fit: cover;
+  border: 5px solid var(--color-bg);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
   position: relative;
   z-index: 2;
-  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
-  border: 5px solid var(--color-bg);
+  transition: transform 0.3s ease;
+}
+
+.hero-image-content:hover {
+  transform: translateY(-5px);
 }
 
 .hero-image-bg {
