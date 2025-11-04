@@ -1,12 +1,16 @@
 /* ==================== PROJECTS SECTION ==================== */
 .projects {
   background: var(--color-bg);
+  padding: 4rem 0;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* ==================== PROJECT CARD ==================== */
@@ -15,80 +19,99 @@
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+  background: var(--color-card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-border);
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ==================== PROJECT IMAGE ==================== */
 .project-image {
   position: relative;
   width: 100%;
-  height: 250px;
+  height: 200px;
   overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-lg) * -1) 0;
+  border-radius: 12px 12px 0 0;
+  background-color: #f5f3ff;
+}
+
+.project-image-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image-content {
+  transform: scale(1.05);
 }
 
 .project-image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 4rem;
-  font-weight: 700;
-  color: white;
-  transition: transform var(--transition-slow);
-}
-
-.project-card:hover .project-image-placeholder {
-  transform: scale(1.1);
-}
-
-/* ==================== PROJECT OVERLAY ==================== */
-.project-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 23, 42, 0.9);
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-hover) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-normal);
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  transition: transform 0.3s ease;
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
+.project-card:hover .project-image-placeholder {
+  transform: scale(1.05);
 }
 
-.project-links {
-  display: flex;
-  gap: var(--spacing-md);
-}
-
-.project-link {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--radius-full);
+/* ==================== LIVE DEMO BUTTON ==================== */
+.live-demo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
   background: var(--color-accent);
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  transition: all var(--transition-fast);
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1.5rem;
+  width: fit-content;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.project-link:hover {
+.live-demo-button:hover {
   background: var(--color-accent-hover);
-  transform: scale(1.1) rotate(5deg);
+  color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.live-demo-button .button-icon {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.live-demo-button:hover .button-icon {
+  transform: translateX(2px) rotate(-5deg);
 }
 
 /* ==================== PROJECT CONTENT ==================== */
@@ -96,20 +119,22 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-top: var(--spacing-md);
+  padding: 1.5rem;
+  height: 100%;
 }
 
 .project-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--color-text);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
 }
 
 .project-description {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1.25rem;
   flex: 1;
 }
 
@@ -117,56 +142,47 @@
 .project-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-xs);
-  margin-top: auto;
+  gap: 0.5rem;
+  margin-top: 1rem;
 }
 
 .tech-badge {
-  padding: 0.375rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   background: var(--color-accent-light);
   color: var(--color-accent);
-  border-radius: var(--radius-full);
-  font-size: 0.875rem;
-  font-weight: 600;
-  transition: all var(--transition-fast);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--color-border);
 }
 
 [data-theme="dark"] .tech-badge {
-  background: rgba(59, 130, 246, 0.2);
-  color: var(--color-accent);
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--color-text-secondary);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .tech-badge:hover {
   background: var(--color-accent);
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-  }
-
-  .project-image {
-    height: 220px;
-  }
-
-  .project-image-placeholder {
-    font-size: 3rem;
-  }
-
-  .project-link {
-    width: 45px;
-    height: 45px;
-    font-size: 1.125rem;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 1.5rem;
   }
 
   .project-image {
@@ -177,11 +193,39 @@
     font-size: 2.5rem;
   }
 
+  .project-content {
+    padding: 1.25rem;
+  }
+
   .project-title {
     font-size: 1.25rem;
   }
 
   .project-description {
     font-size: 0.9375rem;
+  }
+
+  .live-demo-button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    padding: 3rem 0;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 1rem;
+  }
+
+  .tech-badge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
   }
 }

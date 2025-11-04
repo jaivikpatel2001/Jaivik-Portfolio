@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { projectsData } from '../../data/projectsData';
 import './Projects.css';
 
@@ -25,36 +25,28 @@ const Projects = () => {
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
-              className="project-card card"
+              className="project-card"
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="project-image">
-                <div className="project-image-placeholder">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image-content"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.style.display = 'none';
+                    const placeholder = e.target.parentElement.querySelector('.project-image-placeholder');
+                    if (placeholder) {
+                      placeholder.style.display = 'flex';
+                      placeholder.querySelector('span').textContent = project.title.substring(0, 2).toUpperCase();
+                    }
+                  }}
+                />
+                <div className="project-image-placeholder" style={{ display: 'none' }}>
                   <span>{project.title.substring(0, 2).toUpperCase()}</span>
-                </div>
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a
-                      href={project.liveDemo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                      aria-label="View live demo"
-                    >
-                      <FaExternalLinkAlt />
-                    </a>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                      aria-label="View GitHub repository"
-                    >
-                      <FaGithub />
-                    </a>
-                  </div>
                 </div>
               </div>
 
@@ -63,12 +55,23 @@ const Projects = () => {
                 <p className="project-description">{project.description}</p>
 
                 <div className="project-tech">
-                  {project.techStack.map((tech) => (
+                  {project.tags.map((tech) => (
                     <span key={tech} className="tech-badge">
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="live-demo-button"
+                  aria-label="View live demo"
+                >
+                  <span>Live Demo</span>
+                  <FaExternalLinkAlt className="button-icon" />
+                </a>
               </div>
             </motion.div>
           ))}

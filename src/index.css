@@ -12,25 +12,25 @@
   --font-secondary: "Poppins", sans-serif;
 
   /* Light Theme Colors */
-  --color-bg-light: #f9fafb;
+  --color-bg-light: #faf8ff;
   --color-bg-secondary-light: #ffffff;
-  --color-text-light: #1e293b;
-  --color-text-secondary-light: #475569;
-  --color-border-light: #e2e8f0;
-  --color-shadow-light: rgba(0, 0, 0, 0.1);
+  --color-text-light: #1e1b4b;
+  --color-text-secondary-light: #4c1d95;
+  --color-border-light: #e9d5ff;
+  --color-shadow-light: rgba(0, 0, 0, 0.08);
 
   /* Dark Theme Colors */
-  --color-bg-dark: #0f172a;
-  --color-bg-secondary-dark: #1e293b;
-  --color-text-dark: #f1f5f9;
-  --color-text-secondary-dark: #cbd5e1;
-  --color-border-dark: #334155;
-  --color-shadow-dark: rgba(0, 0, 0, 0.3);
+  --color-bg-dark: #0f0a1f;
+  --color-bg-secondary-dark: #1c1240;
+  --color-text-dark: #f5f3ff;
+  --color-text-secondary-dark: #c4b5fd;
+  --color-border-dark: #4c1d95;
+  --color-shadow-dark: rgba(0, 0, 0, 0.4);
 
   /* Accent Colors */
-  --color-accent: #3b82f6;
-  --color-accent-hover: #2563eb;
-  --color-accent-light: #9cc2f4;
+  --color-accent: #8b5cf6;
+  --color-accent-hover: #7c3aed;
+  --color-accent-light: #ddd6fe;
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { FaGraduationCap, FaCalendarAlt, FaAward } from 'react-icons/fa';
+import { FaGraduationCap, FaCalendarAlt, FaAward, FaUniversity } from 'react-icons/fa';
 import { educationData } from '../../data/projectsData';
 import './Education.css';
 
@@ -21,33 +21,50 @@ const Education = () => {
           Education
         </motion.h2>
 
-        <div className="education-content" ref={ref}>
+        <div className="education-timeline" ref={ref}>
           {educationData.map((edu, index) => (
             <motion.div
               key={edu.id}
-              className="education-card card"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              className="timeline-item"
+              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
             >
-              <div className="education-icon">
+              <div className="timeline-marker">
                 <FaGraduationCap />
               </div>
 
-              <div className="education-details">
-                <h3 className="education-degree">{edu.degree}</h3>
-                <h4 className="education-field">{edu.field}</h4>
-                <p className="education-institution">{edu.institution}</p>
+              <div className="timeline-content card">
+                <div className="timeline-header">
+                  <h3 className="timeline-title">{edu.degree}</h3>
+                  <span className="timeline-institution">
+                    <FaUniversity /> {edu.institution}
+                  </span>
+                </div>
 
-                <div className="education-meta">
-                  <span className="education-duration">
+                {edu.field && (
+                  <div className="timeline-field">
+                    {edu.field}
+                  </div>
+                )}
+
+                <div className="timeline-meta">
+                  <span className="timeline-duration">
                     <FaCalendarAlt />
                     {edu.duration}
                   </span>
-                  <span className="education-cgpa">
-                    <FaAward />
-                    CGPA: {edu.cgpa}
-                  </span>
+                  {edu.cgpa && (
+                    <span className="timeline-grade">
+                      <FaAward />
+                      CGPA: {edu.cgpa}
+                    </span>
+                  )}
+                  {edu.percentage && (
+                    <span className="timeline-grade">
+                      <FaAward />
+                      {edu.percentage}
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
