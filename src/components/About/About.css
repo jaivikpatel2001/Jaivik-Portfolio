@@ -162,7 +162,8 @@
   }
 
   .about-image-wrapper {
-    max-width: 250px;
+    /* max-width: 250px; */
+    max-width: 100%;
   }
 
   .about-image-placeholder {

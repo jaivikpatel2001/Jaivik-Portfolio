@@ -59,26 +59,31 @@ export const skillsData = [
   {
     category: "Frontend",
     skills: [
-      { name: "React.js", icon: "FaReact" },
+      { name: "HTML", icon: "FaHtml5" },
+      { name: "CSS", icon: "FaCss3Alt" },
       { name: "JavaScript", icon: "FaJs" },
-      { name: "HTML5", icon: "FaHtml5" },
-      { name: "CSS3", icon: "FaCss3Alt" }
+      { name: "React.js", icon: "FaReact" },
+      { name: "Bootstrap", icon: "FaServer" },
+      { name: "Tailwind CSS", icon: "FaServer" }
     ]
   },
   {
-    category: "Backend",
+    category: "Backend & Databases",
     skills: [
       { name: "Node.js", icon: "FaNodeJs" },
-      { name: "Express.js", icon: "FaServer" },
-      { name: "MongoDB", icon: "FaDatabase" }
+      { name: "Express", icon: "FaServer" },
+      { name: "MongoDB", icon: "FaDatabase" },
+      { name: "SQL", icon: "FaDatabase" }
     ]
   },
   {
-    category: "Tools & Others",
+    category: "Tools & Platforms",
     skills: [
       { name: "Git", icon: "FaGitAlt" },
-      { name: "AWS", icon: "FaAws" },
-      { name: "GitHub", icon: "FaGithub" }
+      { name: "GitHub", icon: "FaGithub" },
+      { name: "Postman", icon: "FaServer" },
+      { name: "VS Code", icon: "FaServer" },
+      { name: "Replit", icon: "FaServer" }
     ]
   }
 ];

@@ -210,10 +210,10 @@ a:hover {
 
 .btn-primary:hover {
   background: var(--color-accent-hover);
+  color: var(--color-bg-light);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
-
 .btn-outline {
   background: transparent;
   color: var(--color-accent);

@@ -1,21 +1,24 @@
-import { motion } from 'motion/react';
-import { useInView } from 'motion/react';
+import { motion, useInView } from 'motion/react';
 import { useRef } from 'react';
-import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaNodeJs, FaServer, FaDatabase, FaGitAlt, FaAws, FaGithub } from 'react-icons/fa';
 import { skillsData } from '../../data/projectsData';
 import './Skills.css';
 
-const iconMap = {
-  FaReact: FaReact,
-  FaJs: FaJs,
-  FaHtml5: FaHtml5,
-  FaCss3Alt: FaCss3Alt,
-  FaNodeJs: FaNodeJs,
-  FaServer: FaServer,
-  FaDatabase: FaDatabase,
-  FaGitAlt: FaGitAlt,
-  FaAws: FaAws,
-  FaGithub: FaGithub
+const skillIcons = {
+  'HTML': 'html.png',
+  'CSS': 'css-3.png',
+  'JavaScript': 'js.png',
+  'React.js': 'react.png',
+  'Bootstrap': 'bootstrap.png',
+  'Tailwind CSS': 'tailwind.png',
+  'Node.js': 'node.png',
+  'Express': 'express.png',
+  'MongoDB': 'mongodb.png',
+  'SQL': 'mysql.png',
+  'Git': 'git.png',
+  'GitHub': 'github.png',
+  'Postman': 'postman.png',
+  'VS Code': 'vscode.png',
+  'Replit': 'replit.png'
 };
 
 const Skills = () => {
@@ -45,24 +48,25 @@ const Skills = () => {
             >
               <h3 className="category-title">{category.category}</h3>
               <div className="skills-grid">
-                {category.skills.map((skill, skillIndex) => {
-                  const IconComponent = iconMap[skill.icon];
-                  return (
-                    <motion.div
-                      key={skill.name}
-                      className="skill-card"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: categoryIndex * 0.2 + skillIndex * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="skill-icon">
-                        {IconComponent && <IconComponent />}
-                      </div>
-                      <span className="skill-name">{skill.name}</span>
-                    </motion.div>
-                  );
-                })}
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skill.name}
+                    className="skill-card"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: categoryIndex * 0.2 + skillIndex * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <div className="skill-icon">
+                      <img
+                        src={`/${skillIcons[skill.name]}`}
+                        alt={skill.name}
+                        className="skill-image"
+                      />
+                    </div>
+                    <span className="skill-name">{skill.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
