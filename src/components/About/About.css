@@ -152,6 +152,11 @@
 }
 
 @media (max-width: 640px) {
+  .about-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
   .about-highlights {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);

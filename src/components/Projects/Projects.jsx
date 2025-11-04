@@ -18,7 +18,7 @@ const Projects = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          Featured Projects
+          My Projects
         </motion.h2>
 
         <div className="projects-grid" ref={ref}>
@@ -31,8 +31,8 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <div className="project-image">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="project-image-content"
                   onError={(e) => {

@@ -3,54 +3,54 @@ export const projectsData = [
     id: 1,
     title: "XO Sports Hub",
     description:
-      "A comprehensive sports management platform with real-time updates, team management, and live scoring features.",
+      "Sports training marketplace with bidding, offers, and admin dashboards. Designed RESTful APIs and optimized integrations for faster response times.",
     image: "/projectthumbnail/xosportsthumbnail.png",
-    tags: ["SportsTech", "Live Updates", "Team Management", "Analytics"],
+    tags: ["SportsTech", "Marketplace", "Bidding System", "Admin Dashboard"],
     liveDemo: "https://xosportshub.com/",
   },
   {
     id: 2,
     title: "IIM-LMS",
     description:
-      "Learning Management System for educational institutions with course management, assignments, and progress tracking.",
+      "Learning management system featuring quizzes, certificates, and course modules. Implemented secure authentication and role-based access.",
     image: "/projectthumbnail/iimthumbnail.png",
-    tags: ["EdTech", "E-Learning", "Course Management", "Institutions"],
+    tags: ["EdTech", "LMS", "Authentication", "Role Management"],
     liveDemo: "https://iim.thefabaf.com/",
   },
   {
     id: 3,
     title: "SendME",
     description:
-      "Real-time messaging application with file sharing, group chats, and end-to-end encryption capabilities.",
+      "Courier delivery platform with live tracking, in-app messaging, and Stripe Connect payments. Built robust backend APIs and admin dashboards.",
     image: "/projectthumbnail/sendmethumbnail.png",
-    tags: ["Communication", "Chat App", "Real-Time", "File Sharing"],
+    tags: ["Logistics", "Real-Time Tracking", "Payments", "Messaging"],
     liveDemo: "https://sendme.thefabaf.com/",
   },
   {
     id: 4,
     title: "Drinkun",
     description:
-      "E-commerce platform for beverage ordering with inventory management and delivery tracking system.",
+      "Real-time alcohol delivery app. Developed responsive UI and optimized UX for high-performance order tracking.",
     image: "/projectthumbnail/drinkunthumbnail.png",
-    tags: ["E-Commerce", "Food & Beverage", "Inventory", "Delivery"],
+    tags: ["E-Commerce", "Alcohol Delivery", "Real-Time Orders", "Mobile App"],
     liveDemo: "https://drinkun.com/",
   },
   {
     id: 5,
     title: "Rapid Runners",
     description:
-      "Logistics and delivery management system with route optimization and real-time tracking features.",
+      "Same-day delivery and moving service platform. Built adaptive, mobile-first frontend with seamless UX and fast load times.",
     image: "/projectthumbnail/rapidrunnerthumbnail.png",
-    tags: ["Logistics", "Delivery", "Route Optimization", "Tracking"],
+    tags: ["On-Demand", "Logistics", "Delivery Service", "Responsive Design"],
     liveDemo: "https://rapidrunners.com/",
   },
   {
     id: 6,
     title: "ListingPix",
     description:
-      "Real estate listing platform with advanced search filters, virtual tours, and property management tools.",
+      "AI-powered real estate photography tool. Built a modern, responsive UI for real estate professionals with integrated AI enhancements.",
     image: "/projectthumbnail/listingpixthumbnail.png",
-    tags: ["PropTech", "Real Estate", "Virtual Tours", "Property Management"],
+    tags: ["AI", "Real Estate", "Photography", "Image Enhancement"],
     liveDemo: "https://listingpix.com",
   },
 ];
