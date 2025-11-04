@@ -70,7 +70,7 @@ const Hero = () => {
             transition={{ delay: 1, duration: 0.6 }}
           >
             <a
-              href="/public/jaivikresume.pdf"
+              href="/jaivikresume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-primary"

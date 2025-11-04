@@ -2,13 +2,15 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { FaLinkedin, FaGithub, FaGlobe, FaPaperPlane } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaGlobe, FaPaperPlane, FaInstagram, FaFacebook } from 'react-icons/fa';
+import { FaXTwitter } from "react-icons/fa6";
+
 import './Contact.css';
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -24,15 +26,15 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Create Gmail compose URL with pre-filled data
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jaivikpatel@example.com&su=Portfolio Contact from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
     )}`;
-    
+
     // Open Gmail in new tab
     window.open(gmailUrl, '_blank');
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -45,20 +47,32 @@ const Contact = () => {
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/jaivikpatel',
+      url: 'https://www.linkedin.com/in/jaivik-patel-4a316722a/',
       color: '#0077b5'
     },
     {
       name: 'GitHub',
       icon: FaGithub,
-      url: 'https://github.com/jaivikpatel',
+      url: 'https://github.com/jaivikpatel2001',
       color: '#333'
     },
     {
-      name: 'Portfolio',
-      icon: FaGlobe,
-      url: 'https://jaivikpatel.com',
-      color: '#3b82f6'
+      name: 'X',
+      icon: FaXTwitter,
+      url: 'https://x.com/JaivikPatel2001',
+      color: '#000'
+    },
+    {
+      name: 'Instagram',
+      icon: FaInstagram,
+      url: 'https://www.instagram.com/jaivik.k.patel/?hl=en',
+      color: '#E4405F'
+    },
+    {
+      name: 'Facebook',
+      icon: FaFacebook,
+      url: 'https://www.facebook.com/jaivik.patel.5492',
+      color: '#1877F2'
     }
   ];
 
@@ -98,8 +112,8 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
                   aria-label={social.name}
+                  style={{ color: social.color }}
                 >
                   <social.icon />
                 </motion.a>

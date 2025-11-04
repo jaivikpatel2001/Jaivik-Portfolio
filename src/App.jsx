@@ -16,7 +16,7 @@ const App = () => {
     <ThemeProvider>
       <div className="app">
         <Navbar />
-        <main>
+        <main style={{overflowX: 'hidden'}}>
           <Hero />
           <About />
           <Skills />
